@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melvin Hong | Senior Marketing Strategy & AI Integration Advisor</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Inter & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        navy: {
+                            900: '#0a0f1d',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151',
+                        },
+                        accent: {
+                            cyan: '#38bdf8',
+                            purple: '#a855f7',
+                            emerald: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 45%),
+                        radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                        #0a0f1d;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-cyan via-accent-purple to-accent-emerald flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-accent-cyan/20 group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg tracking-wide text-white group-hover:text-accent-cyan transition-colors">Melvin <span class="text-xs font-normal text-slate-400">(Hong J Jhang)</span></span>
+                        <span class="text-[11px] text-slate-400 tracking-wider">Marketing & AI Strategy Advisor</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#home" class="text-slate-300 hover:text-accent-cyan transition-colors">首頁</a>
+                    <a href="#about" class="text-slate-300 hover:text-accent-cyan transition-colors">關於我</a>
+                    <a href="#services" class="text-slate-300 hover:text-accent-cyan transition-colors">行銷方案</a>
+                    <a href="#portfolio" class="text-slate-300 hover:text-accent-cyan transition-colors">作品集案例</a>
+                    <a href="#insights" class="text-slate-300 hover:text-accent-cyan transition-colors">技術部落格</a>
+                    <a href="#contact" class="text-slate-300 hover:text-accent-cyan transition-colors">聯絡我</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-accent-cyan/20 hover:-translate-y-0.5 transition-all">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>預約策略諮詢
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">首頁</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">關於我</a>
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">行銷方案</a>
+            <a href="#portfolio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">作品集案例</a>
+            <a href="#insights" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">技術部落格</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">聯絡我</a>
+            <a href="#contact" class="mobile-link block text-center mt-4 w-full py-2.5 rounded-xl bg-accent-cyan text-slate-950 font-bold">預約策略諮詢</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative hero-bg text-white pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Main Headline & Tagline -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-accent-cyan text-xs sm:text-sm font-medium">
+                        <span class="flex h-2 w-2 rounded-full bg-accent-cyan animate-ping"></span>
+                        10+ 年數位行銷 ✕ 全媒體企劃 ✕ AI 流程賦能專家
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        連結策略、媒體與 AI 技術<br>
+                        為品牌創造<span class="gradient-text">可衡量的長期商業成長</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        我是 Melvin。專注於從品牌與商業目標出發，整合數位全媒體與內容溝通，並透過 <span class="text-white font-medium underline decoration-accent-cyan decoration-2 underline-offset-4">AI 賦能工作流程</span>，讓資料快速轉化為策略，為每一分行銷投入創造可衡量的商業 ROI。
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 font-extrabold hover:shadow-xl hover:shadow-accent-cyan/25 hover:-translate-y-0.5 transition-all text-center">
+                            預約策略諮詢 <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-white font-semibold transition-all text-center">
+                            查看精選案例
+                        </a>
+                    </div>
+
+                    <!-- Tech & Credential Badges -->
+                    <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-2 text-xs text-slate-400">
+                        <span class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80">#全媒體企劃採購</span>
+                        <span class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80">#品牌溝通與定位</span>
+                        <span class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80">#GAIQ數據成效</span>
+                        <span class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/80">#AI行銷流程自動化</span>
+                    </div>
+                </div>
+
+                <!-- Right Interactive Credential Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-accent-cyan via-accent-purple to-accent-emerald blur-xl opacity-25"></div>
+                        
+                        <div class="relative bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                            <div class="flex items-center gap-4 pb-6 border-b border-slate-800">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-accent-cyan to-accent-purple p-0.5 shadow-md">
+                                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-accent-cyan font-black text-2xl">
+                                        M
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Melvin (Hong J Jhang)</h3>
+                                    <p class="text-xs text-accent-cyan font-semibold">MSc in Marketing, Univ. of Leicester</p>
+                                    <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-certificate text-emerald-400 mr-1"></i> Google Analytics (GAIQ) 認證</p>
+                                </div>
+                            </div>
+
+                            <!-- Stat Grid Counters -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                                    <div class="text-2xl sm:text-3xl font-black text-accent-cyan">10+ 年</div>
+                                    <div class="text-xs text-slate-400 mt-1">跨產業行銷與媒體經驗</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                                    <div class="text-2xl sm:text-3xl font-black text-accent-purple">6 大領域</div>
+                                    <div class="text-xs text-slate-400 mt-1">3C/醫療/電信/精品/金融</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                                    <div class="text-2xl sm:text-3xl font-black text-accent-emerald">AI 賦能</div>
+                                    <div class="text-xs text-slate-400 mt-1">極大化工作效率與 ROI</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80">
+                                    <div class="text-2xl sm:text-3xl font-black text-accent-cyan">全方位</div>
+                                    <div class="text-xs text-slate-400 mt-1">策略規劃到成效落地</div>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 flex items-center gap-3 text-xs text-cyan-200">
+                                <i class="fa-solid fa-wand-magic-sparkles text-base text-accent-cyan shrink-0"></i>
+                                <span>「以 AI 提升效率，以數據驗證成果，讓每一分投入更接近商業目標。」</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mt-16 pt-10 border-t border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-xs font-bold text-slate-500 tracking-widest uppercase mb-8">
+                    曾參與企劃與服務之指標企業與品牌
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
+                    
+                    <!-- 中華電信 Chunghwa Telecom -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10" title="中華電信 Chunghwa Telecom">
+                        <svg class="h-8 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 20C22 13.3726 16.6274 8 10 8C3.37258 8 0 13.3726 0 20C0 26.6274 5.37258 32 12 32C18.6274 32 22 26.6274 22 20Z" fill="#02a95c" fill-opacity="0.3"/>
+                            <circle cx="14" cy="20" r="8" fill="#02a95c"/>
+                            <path d="M8 20C8 16.6863 10.6863 14 14 14C17.3137 14 20 16.6863 20 20" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                            <text x="36" y="23" font-family="'Noto Sans TC', sans-serif" font-weight="900" font-size="15" fill="#ffffff" letter-spacing="0.5">中華電信</text>
+                            <text x="36" y="32" font-family="'Inter', sans-serif" font-weight="600" font-size="7" fill="#818cf8" letter-spacing="0.8">Chunghwa Telecom</text>
+                        </svg>
+                    </div>
+
+                    <!-- 飛利浦 Philips -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-sky-500/40 hover:shadow-lg hover:shadow-sky-500/10" title="飛利浦 PHILIPS">
+                        <svg class="h-7 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="26" font-family="'Inter', sans-serif" font-weight="900" font-size="24" fill="#38bdf8" letter-spacing="2">PHILIPS</text>
+                            <text x="1" y="34" font-family="'Noto Sans TC', sans-serif" font-weight="500" font-size="7" fill="#94a3b8" letter-spacing="1">飛利浦台灣</text>
+                        </svg>
+                    </div>
+
+                    <!-- 聯想電腦 Lenovo -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/10" title="聯想電腦 Lenovo">
+                        <svg class="h-8 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="4" width="130" height="28" rx="4" fill="#e2231a"/>
+                            <text x="12" y="24" font-family="'Inter', sans-serif" font-weight="800" font-size="17" fill="#ffffff" letter-spacing="0.5">Lenovo</text>
+                            <text x="82" y="23" font-family="'Noto Sans TC', sans-serif" font-weight="700" font-size="10" fill="#fecaca">聯想</text>
+                        </svg>
+                    </div>
+
+                    <!-- 友信醫療集團 Unimed -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10" title="友信醫療集團 Unimed">
+                        <svg class="h-8 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="8" width="24" height="24" rx="6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2"/>
+                            <path d="M14 13V27M7 20H21" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
+                            <text x="34" y="23" font-family="'Noto Sans TC', sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="0.5">友信醫療集團</text>
+                            <text x="34" y="32" font-family="'Inter', sans-serif" font-weight="600" font-size="7" fill="#a7f3d0" letter-spacing="1">UNIMED MEDICAL</text>
+                        </svg>
+                    </div>
+
+                    <!-- 中嘉數位 Homeplus -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/10" title="中嘉數位 Homeplus">
+                        <svg class="h-8 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 24L14 10L24 24H18V31H10V24H4Z" fill="#f97316"/>
+                            <circle cx="21" cy="12" r="3" fill="#0284c7"/>
+                            <text x="32" y="23" font-family="'Noto Sans TC', sans-serif" font-weight="900" font-size="15" fill="#ffffff" letter-spacing="0.5">中嘉數位</text>
+                            <text x="32" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="7" fill="#fb923c" letter-spacing="1">homeplus Broadband</text>
+                        </svg>
+                    </div>
+
+                    <!-- 立視科技 LiTV -->
+                    <div class="p-3.5 h-16 rounded-xl bg-slate-900/60 hover:bg-slate-800/90 border border-slate-800/80 flex items-center justify-center transition-all duration-300 group hover:border-rose-500/40 hover:shadow-lg hover:shadow-rose-500/10" title="立視科技 LiTV">
+                        <svg class="h-8 w-auto max-w-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" viewBox="0 0 130 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 11C4 7.68629 6.68629 5 10 5H24C27.3137 5 30 7.68629 30 11V27C30 30.3137 27.3137 33 24 33H10C6.68629 33 4 30.3137 4 27V11Z" fill="#f43f5e"/>
+                            <path d="M14 13L22 19L14 25V13Z" fill="#ffffff"/>
+                            <text x="36" y="22" font-family="'Inter', sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="0.5">LiTV</text>
+                            <text x="36" y="31" font-family="'Noto Sans TC', sans-serif" font-weight="600" font-size="7" fill="#fda4af" letter-spacing="0.8">立視線上影視</text>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-900 text-slate-100 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-accent-purple tracking-widest uppercase mb-2">ABOUT MELVIN</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-white">兼顧品牌長遠價值與實質商業成果</h3>
+                <div class="w-16 h-1 bg-gradient-to-r from-accent-cyan to-accent-purple mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Bio & Story -->
+                <div class="lg:col-span-6 space-y-6 text-slate-300 leading-relaxed">
+                    <div class="bg-slate-950/80 p-8 rounded-3xl border border-slate-800 shadow-xl space-y-4">
+                        <h4 class="text-xl font-bold text-white flex items-center gap-3">
+                            <i class="fa-solid fa-user-check text-accent-cyan"></i> 品牌故事與行銷理念
+                        </h4>
+                        <p class="text-sm text-slate-300">
+                            我是 Melvin，一名專注於數位行銷、媒體企劃與品牌推廣的專業人士，擁有 10 年以上跨產業的行銷與媒體實務經驗。過去曾參與中華電信、飛利浦、聯想電腦等品牌的數位媒體企劃，亦曾於友信醫療集團、中嘉數位及立視科技等企業，負責行銷企劃、媒體策略與流量管理，累積從品牌溝通、媒體規劃到行銷執行與成效管理的完整經驗。
+                        </p>
+                        <p class="text-sm text-slate-300">
+                            我的專業不只在於「投放廣告」，更重視如何從品牌與商業目標出發，找到正確的溝通策略與媒體解決方案。過去參與的專案涵蓋<strong class="text-white">金融、精品、醫療、網路廣告、3C 家電及電信</strong>等產業。
+                        </p>
+                        <p class="text-sm text-slate-300">
+                            我相信好的行銷不只是追求短期流量，而是要兼顧品牌價值、消費者洞察與實際商業成果。因此，我擅長在策略與執行之間找到平衡，並透過數據分析與成效追蹤持續優化，讓每一項行銷投入都更接近真正的商業目標。
+                        </p>
+                    </div>
+
+                    <!-- Academic Credentials Cards -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                            <i class="fa-solid fa-graduation-cap text-accent-cyan text-2xl"></i>
+                            <h5 class="font-bold text-base text-white">英國萊斯特大學碩士</h5>
+                            <p class="text-xs text-slate-400">University of Leicester<br>MSc in Marketing</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                            <i class="fa-solid fa-award text-accent-purple text-2xl"></i>
+                            <h5 class="font-bold text-base text-white">Google 數據認證</h5>
+                            <p class="text-xs text-slate-400">Google Analytics Individual Qualification (GAIQ)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Core Competencies Matrix -->
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-950/80 rounded-3xl border border-slate-800 shadow-xl p-8">
+                        <h4 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-layer-group text-accent-purple"></i> 核心能力矩陣
+                        </h4>
+
+                        <!-- Competency Tabs Buttons -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 border-b border-slate-800 pb-4">
+                            <button onclick="switchTab('brand')" id="tab-brand" class="tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 transition-all text-center">品牌與數位策略</button>
+                            <button onclick="switchTab('media')" id="tab-media" class="tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:bg-slate-800 transition-all text-center">全媒體企劃採購</button>
+                            <button onclick="switchTab('data')" id="tab-data" class="tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:bg-slate-800 transition-all text-center">流量與數據優化</button>
+                            <button onclick="switchTab('ai')" id="tab-ai" class="tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:bg-slate-800 transition-all text-center">AI 行銷效率賦能</button>
+                        </div>
+
+                        <!-- Tab Content Views -->
+                        <div id="tab-content-brand" class="tab-content space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-bullseye text-accent-cyan mr-2"></i> 品牌定位與產品溝通藍圖</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">從商業目標出發，釐清品牌定位、產品特色與 TA 痛點，建立高效率的整合溝通策略。</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-shapes text-accent-cyan mr-2"></i> 跨產業溝通適應力</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">涵蓋金融、醫療、精品到 3C 家電與電信，精準掌握不同消費者與市場脈動。</p>
+                            </div>
+                        </div>
+
+                        <div id="tab-content-media" class="tab-content hidden space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-sliders text-accent-purple mr-2"></i> 全通路媒體組合與預算配置</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">整合 Google, Meta, LINE, LiTV, 程序化購買與傳統媒體，調配最佳投資比重。</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-handshake-simple text-accent-purple mr-2"></i> 媒體採購與談判價值增額</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">最大化媒體附加價值 (Media Value Added)，確保每一分廣告預算發揮實質影響力。</p>
+                            </div>
+                        </div>
+
+                        <div id="tab-content-data" class="tab-content hidden space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-chart-pie text-accent-emerald mr-2"></i> GA4 & 漏斗轉換追蹤</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">運用 GAIQ 專業架構進行流量路徑解析，找出高價值轉換點與跳出原因。</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-vial text-accent-emerald mr-2"></i> CPA/ROAS 成效持續優化</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">定期進行 A/B Testing 與 Landing Page 測試，降解顧客獲取成本。</p>
+                            </div>
+                        </div>
+
+                        <div id="tab-content-ai" class="tab-content hidden space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-robot text-accent-cyan mr-2"></i> 競品與消費者洞察自動化</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">透過 Prompt 工具模組，快速抓取市場趨勢，讓團隊專注於高價值的策略決策。</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+                                <h5 class="font-bold text-white mb-1 text-sm"><i class="fa-solid fa-wand-magic-sparkles text-accent-cyan mr-2"></i> AI 輔助素材與文案量產</h5>
+                                <p class="text-xs text-slate-400 leading-relaxed">利用 AI 多角度生成廣告切角與內容提案，大幅縮短前期測試與開發時數。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-950 text-white border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-accent-cyan tracking-widest uppercase mb-2">SERVICES & SOLUTIONS</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-white">行銷方案服務</h3>
+                <p class="text-slate-400 text-sm mt-3">結合專業行銷心法與 AI 科技，提供全方位顧問與執行方案</p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                <!-- Service 1 -->
+                <div class="bg-slate-900/90 rounded-3xl p-8 border border-slate-800 hover:border-accent-cyan/50 hover:shadow-2xl hover:shadow-accent-cyan/10 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-950 text-accent-cyan flex items-center justify-center text-2xl mb-6 border border-slate-800 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3">品牌與數位行銷策略</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            釐清品牌定位、產品特色與目標客群，規劃完整整合溝通藍圖與通路佈局。
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('strategy')" class="text-xs font-bold text-accent-cyan hover:underline flex items-center gap-2">
+                        瞭解服務細節 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-900/90 rounded-3xl p-8 border border-slate-800 hover:border-accent-purple/50 hover:shadow-2xl hover:shadow-accent-purple/10 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-950 text-accent-purple flex items-center justify-center text-2xl mb-6 border border-slate-800 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3">全媒體企劃與購買</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            橫跨數位與傳統媒體，調配最適預算比例，最大化品牌曝光與高價值聲量。
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('media')" class="text-xs font-bold text-accent-purple hover:underline flex items-center gap-2">
+                        瞭解服務細節 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-900/90 rounded-3xl p-8 border border-slate-800 hover:border-accent-emerald/50 hover:shadow-2xl hover:shadow-accent-emerald/10 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-950 text-accent-emerald flex items-center justify-center text-2xl mb-6 border border-slate-800 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3">流量管理與數據成效</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            以 GA4 與成效數據為核心，優化轉換漏斗，精準控制顧客獲取成本 (CPA)。
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('data')" class="text-xs font-bold text-accent-emerald hover:underline flex items-center gap-2">
+                        瞭解服務細節 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4 (AI Dedicated Card) -->
+                <div class="bg-gradient-to-br from-slate-900 via-navy-900 to-slate-950 text-white rounded-3xl p-8 border border-accent-cyan/40 hover:shadow-2xl hover:shadow-accent-cyan/20 transition-all group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-3 right-3 px-3 py-1 bg-gradient-to-r from-accent-cyan to-accent-emerald text-slate-950 font-black text-[10px] rounded-full uppercase">
+                        AI Service
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-accent-cyan text-slate-950 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform font-black">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-3">AI 行銷效率放大方案</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                            將 AI 導入行銷策略、內容規劃、資料分析與工作流程，協助企業降低重複性工作成本，提升決策速度與 ROI。
+                        </p>
+                    </div>
+                    <button onclick="openServiceModal('ai')" class="text-xs font-bold text-accent-cyan hover:underline flex items-center gap-2">
+                        瞭解服務細節 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive AI Efficiency & ROI Calculator Widget -->
+            <div class="bg-slate-900 rounded-3xl p-8 lg:p-12 border border-slate-800 shadow-2xl relative overflow-hidden">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-accent-cyan/20 text-accent-cyan text-xs font-semibold">
+                            <i class="fa-solid fa-calculator"></i> 互動估算工具
+                        </div>
+                        <h4 class="text-2xl font-black text-white">AI 行銷效率與 ROI 試算器</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            透過將 AI 技術導入調研、素材與分析流程，即時估算您的團隊每月可省下的執行工時與預期效率提升。
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-slate-950 rounded-2xl p-6 border border-slate-800 space-y-6">
+                        <!-- Slider 1 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-2">
+                                <span class="text-slate-300">團隊每週花在競品調研/素材文案時數：</span>
+                                <span class="text-accent-cyan font-bold"><span id="hours-val">20</span> 小時/週</span>
+                            </div>
+                            <input type="range" id="hours-slider" min="5" max="60" value="20" class="w-full accent-accent-cyan cursor-pointer h-2 bg-slate-800 rounded-lg">
+                        </div>
+
+                        <!-- Slider 2 -->
+                        <div>
+                            <div class="flex justify-between text-xs font-medium mb-2">
+                                <span class="text-slate-300">每月預計行銷或廣告預算 (NTD)：</span>
+                                <span class="text-accent-cyan font-bold">$<span id="budget-val">200,000</span></span>
+                            </div>
+                            <input type="range" id="budget-slider" min="50000" max="1000000" step="50000" value="200000" class="w-full accent-accent-cyan cursor-pointer h-2 bg-slate-800 rounded-lg">
+                        </div>
+
+                        <!-- Results display -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                            <div class="p-4 rounded-xl bg-slate-900 border border-accent-cyan/30">
+                                <div class="text-xs text-slate-400">預計每月省下工時</div>
+                                <div class="text-2xl font-black text-accent-cyan mt-1"><span id="saved-hours">32</span> 小時 / 月</div>
+                                <div class="text-[10px] text-slate-500 mt-1">釋放人力專注於戰略思考</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900 border border-accent-purple/30">
+                                <div class="text-xs text-slate-400">素材多版本測試與 ROI 效率提升</div>
+                                <div class="text-2xl font-black text-accent-purple mt-1">+<span id="roi-boost">22</span>% 增幅估算</div>
+                                <div class="text-[10px] text-slate-500 mt-1">以快速數據驗證優化廣告切角</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-slate-900 text-white border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-accent-purple tracking-widest uppercase mb-2">PORTFOLIO & CASE STUDIES</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-white">作品集與案例展示</h3>
+                <p class="text-slate-400 text-sm mt-3">以 STAR 原則 (背景挑戰、溝通策略、執行工具、實質成果) 呈現的跨產業專案</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterPortfolio('all', this)" class="filter-btn active px-5 py-2.5 rounded-full text-xs font-bold bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 transition-all">全部案例</button>
+                <button onclick="filterPortfolio('tech', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 transition-all">3C 家電</button>
+                <button onclick="filterPortfolio('medical', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 transition-all">醫療生技</button>
+                <button onclick="filterPortfolio('telecom', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 transition-all">電信 / 網路廣告</button>
+                <button onclick="filterPortfolio('ai', this)" class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 transition-all">AI 導入實例</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+
+                <!-- Case 1: 3C Philips / Lenovo -->
+                <div class="portfolio-item cat-tech bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 hover:border-accent-cyan/50 hover:shadow-xl transition-all flex flex-col">
+                    <div class="p-6 bg-slate-900 border-b border-slate-800 relative">
+                        <span class="text-[10px] font-bold px-2.5 py-1 bg-accent-cyan text-slate-950 rounded-md uppercase">3C 家電</span>
+                        <h4 class="text-lg font-bold text-white mt-3">知名 3C 旗艦新品全媒體上市發布</h4>
+                        <p class="text-xs text-slate-400 mt-1">飛利浦 / 聯想電腦媒體企劃實績</p>
+                    </div>
+                    <div class="p-6 flex-1 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3 text-xs text-slate-300">
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🎯 商業挑戰 (Challenge)：</strong>
+                                面對高度競爭市場，新品聲量需於短時間內突破並轉化為實際銷量。
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🚀 溝通策略 (Strategy)：</strong>
+                                整合線上 KOL 試用、關鍵字廣告精準攔截與程序化 Display 大面積覆蓋。
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-bold text-accent-cyan">+180% 專案 ROAS 提升</span>
+                            <button onclick="openCaseModal('case1')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-white font-bold text-xs hover:bg-accent-cyan hover:text-slate-950 transition-all">案例詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: Medical / Healthcare -->
+                <div class="portfolio-item cat-medical bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 hover:border-accent-purple/50 hover:shadow-xl transition-all flex flex-col">
+                    <div class="p-6 bg-slate-900 border-b border-slate-800 relative">
+                        <span class="text-[10px] font-bold px-2.5 py-1 bg-accent-purple text-white rounded-md uppercase">醫療生技</span>
+                        <h4 class="text-lg font-bold text-white mt-3">高端醫療設備與服務品牌溝通重塑</h4>
+                        <p class="text-xs text-slate-400 mt-1">友信醫療集團行銷企劃實績</p>
+                    </div>
+                    <div class="p-6 flex-1 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3 text-xs text-slate-300">
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🎯 商業挑戰 (Challenge)：</strong>
+                                醫療生技技術門檻高，需將專業語言轉化為 B2B 決策者與大眾易懂之價值。
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🚀 溝通策略 (Strategy)：</strong>
+                                規劃內容溝通模組，結合學術研討會線上直播與醫療專訪故事，建立權威信任感。
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-bold text-accent-purple">+45% B2B 潛在合作詢問</span>
+                            <button onclick="openCaseModal('case2')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-white font-bold text-xs hover:bg-accent-purple hover:text-white transition-all">案例詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: Telecom / Ad -->
+                <div class="portfolio-item cat-telecom bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 hover:border-accent-emerald/50 hover:shadow-xl transition-all flex flex-col">
+                    <div class="p-6 bg-slate-900 border-b border-slate-800 relative">
+                        <span class="text-[10px] font-bold px-2.5 py-1 bg-accent-emerald text-slate-950 rounded-md uppercase">電信 / 網路廣告</span>
+                        <h4 class="text-lg font-bold text-white mt-3">數位影音與寬頻方案流量獲客計畫</h4>
+                        <p class="text-xs text-slate-400 mt-1">中華電信 / 中嘉數位 / LiTV 經驗</p>
+                    </div>
+                    <div class="p-6 flex-1 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3 text-xs text-slate-300">
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🎯 商業挑戰 (Challenge)：</strong>
+                                OTT 與寬頻服務獲客成本昂貴，需要持續優化廣告轉換漏斗降低 CPA。
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🚀 溝通策略 (Strategy)：</strong>
+                                運用 GA4 與數據分析進行客群分群再行銷，透過動態文案增強轉換效率。
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-bold text-accent-emerald">-30% 顧客獲取成本 (CPA)</span>
+                            <button onclick="openCaseModal('case3')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-white font-bold text-xs hover:bg-accent-emerald hover:text-slate-950 transition-all">案例詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 4: AI Workflow -->
+                <div class="portfolio-item cat-ai bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 hover:border-accent-cyan/50 hover:shadow-xl transition-all flex flex-col">
+                    <div class="p-6 bg-slate-900 border-b border-slate-800 relative">
+                        <span class="text-[10px] font-bold px-2.5 py-1 bg-gradient-to-r from-accent-cyan to-accent-emerald text-slate-950 rounded-md uppercase">AI 導入實例</span>
+                        <h4 class="text-lg font-bold text-white mt-3">企業級 AI 行銷自動化工作流程建置</h4>
+                        <p class="text-xs text-slate-400 mt-1">團隊執行效率革命與素材產能放大</p>
+                    </div>
+                    <div class="p-6 flex-1 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3 text-xs text-slate-300">
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🎯 商業挑戰 (Challenge)：</strong>
+                                傳統素材產出速度跟不上社群與廣告測試需求，競品資訊整理耗費大量人力。
+                            </div>
+                            <div>
+                                <strong class="text-white block font-semibold mb-1">🚀 溝通策略 (Strategy)：</strong>
+                                設計客製 Prompt 模組與自動化流程，一鍵生成多受眾切角與廣告提案。
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-bold text-accent-cyan">+300% 素材產出速度</span>
+                            <button onclick="openCaseModal('case4')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-white font-bold text-xs hover:bg-accent-cyan hover:text-slate-950 transition-all">案例詳情</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="py-24 bg-slate-950 text-white border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-accent-cyan tracking-widest uppercase mb-2">TECH BLOG & INSIGHTS</h2>
+                <h3 class="text-3xl sm:text-4xl font-black text-white">技術部落格與行銷洞察</h3>
+                <p class="text-slate-400 text-sm mt-3">分享 AI 實務、全媒體策略與 GA4 數據思維專題文章</p>
+            </div>
+
+            <!-- Real-time Search Filter Bar -->
+            <div class="max-w-2xl mx-auto mb-12 relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-500 text-sm"></i>
+                <input type="text" id="blog-search" placeholder="搜尋關鍵字 (例如: Prompt, GA4, 媒體, 策略)..." oninput="searchBlog()" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-accent-cyan">
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-3 gap-8" id="blog-grid">
+
+                <!-- Article 1 -->
+                <article class="blog-card bg-slate-900 rounded-3xl p-6 border border-slate-800 hover:border-accent-cyan/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-[11px] text-slate-400">
+                            <span class="px-2.5 py-1 bg-cyan-950 border border-cyan-500/30 text-accent-cyan font-bold rounded-md">2026 AI 實務</span>
+                            <span>2026-03-15</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white hover:text-accent-cyan transition-colors cursor-pointer" onclick="openBlogModal('art1')">
+                            2026 AI 行銷實務：如何將 Prompt 工程融入每日媒體採購與內容流程
+                        </h4>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                            許多企業嘗試導入 AI，卻發現成果流於表面。本文探討如何建立「資料 ➔ 洞察 ➔ 策略」的 AI 自動化架構，將 AI 變成團隊效率放大器...
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">閱讀 6 分鐘</span>
+                        <button onclick="openBlogModal('art1')" class="text-xs font-bold text-accent-cyan hover:underline">閱讀全文 <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card bg-slate-900 rounded-3xl p-6 border border-slate-800 hover:border-accent-purple/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-[11px] text-slate-400">
+                            <span class="px-2.5 py-1 bg-purple-950 border border-purple-500/30 text-accent-purple font-bold rounded-md">數據與商業</span>
+                            <span>2026-02-28</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white hover:text-accent-purple transition-colors cursor-pointer" onclick="openBlogModal('art2')">
+                            超越短期流量：從 GA4 數據到商業決策的跨產業洞察
+                        </h4>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                            擁有 GAIQ 認證的實戰觀點：如何透過 GA4 自訂事件與歸因模型，解密使用者真實心智，避免盲目追逐高點擊但無轉換的無效流量...
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">閱讀 8 分鐘</span>
+                        <button onclick="openBlogModal('art2')" class="text-xs font-bold text-accent-purple hover:underline">閱讀全文 <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card bg-slate-900 rounded-3xl p-6 border border-slate-800 hover:border-accent-emerald/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-[11px] text-slate-400">
+                            <span class="px-2.5 py-1 bg-emerald-950 border border-emerald-500/30 text-accent-emerald font-bold rounded-md">全媒體企劃</span>
+                            <span>2026-01-20</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white hover:text-accent-emerald transition-colors cursor-pointer" onclick="openBlogModal('art3')">
+                            傳統媒體與數位媒體的整合企劃思維：兼顧品牌聲量與轉換成效
+                        </h4>
+                        <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                            面對碎片化的注意力，如何調配全通路媒體資源？分享在 3C、醫療與電信產業中，將品牌價值與效能廣告結合的黃金預算配置原則...
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-800 mt-6 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">閱讀 7 分鐘</span>
+                        <button onclick="openBlogModal('art3')" class="text-xs font-bold text-accent-emerald hover:underline">閱讀全文 <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Direct Info & Social -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-xs font-bold text-accent-cyan tracking-widest uppercase mb-2">CONTACT MELVIN</h2>
+                        <h3 class="text-3xl sm:text-4xl font-black text-white">啟動您的品牌成長與 AI 轉型</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-4 leading-relaxed">
+                            無論是全媒體企劃、品牌數位策略，或是企業內部導入 AI 行銷流程，都歡迎預約諮詢洽談。
+                        </p>
+                    </div>
+
+                    <!-- Info Cards -->
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-2xl glass-card flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-cyan/20 text-accent-cyan flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Email 信箱</div>
+                                <div class="text-sm font-bold text-white">melvin.marketing.strategy@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl glass-card flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-purple/20 text-accent-purple flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">LinkedIn 職涯檔案</div>
+                                <a href="https://linkedin.com" target="_blank" class="text-sm font-bold text-accent-cyan hover:underline">Melvin (Hong J Jhang)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion FAQ -->
+                    <div class="pt-6 border-t border-slate-800">
+                        <h4 class="text-base font-bold text-white mb-4"><i class="fa-solid fa-circle-question text-accent-purple mr-2"></i> 常見問題 (FAQ)</h4>
+                        <div class="space-y-3">
+                            <details class="group bg-slate-900 rounded-xl border border-slate-800 p-4">
+                                <summary class="font-semibold text-xs text-slate-200 cursor-pointer flex justify-between items-center">
+                                    <span>主要合作模式為何？</span>
+                                    <i class="fa-solid fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i>
+                                </summary>
+                                <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                                    提供「專案全媒體企劃與代操」、「品牌行銷常年顧問」與「企業 AI 行銷工作流程導入與培訓」等彈性合作方式。
+                                </p>
+                            </details>
+
+                            <details class="group bg-slate-900 rounded-xl border border-slate-800 p-4">
+                                <summary class="font-semibold text-xs text-slate-200 cursor-pointer flex justify-between items-center">
+                                    <span>AI 行銷賦能方案需要多久時間生效？</span>
+                                    <i class="fa-solid fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i>
+                                </summary>
+                                <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                                    通常第一階段（團隊工作流程診斷與 Prompt 模組導入）約 2 週即可看到顯著的時間成本下降與素材產出速度提升。
+                                </p>
+                            </details>
+
+                            <details class="group bg-slate-900 rounded-xl border border-slate-800 p-4">
+                                <summary class="font-semibold text-xs text-slate-200 cursor-pointer flex justify-between items-center">
+                                    <span>跨產業專案如何快速適應與上手？</span>
+                                    <i class="fa-solid fa-chevron-down text-slate-500 group-open:rotate-180 transition-transform"></i>
+                                </summary>
+                                <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+                                    擁有 10 年以上跨金融、醫療、3C、電信等領域經驗，習慣先釐清品牌定位與商業目標，能迅速套用高效率調研架構發掘痛點。
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-2xl">
+                        <h4 class="text-xl font-black mb-2">預約諮詢與專案洽談</h4>
+                        <p class="text-xs text-slate-400 mb-8">請填寫您的需求資訊，我將於 24 小時內親自聯繫。</p>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-2">您的姓名 *</label>
+                                    <input type="text" required placeholder="例如：張先生 / 王小姐" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-2">公司 / 品牌名稱 *</label>
+                                    <input type="text" required placeholder="例如：ABC 科技股份有限公司" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-2">聯絡 Email *</label>
+                                    <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-2">聯絡電話</label>
+                                    <input type="tel" placeholder="0912-345-678" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">諮詢服務需求類型 *</label>
+                                <select required class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                    <option value="">請選擇需求類型...</option>
+                                    <option value="strategy">品牌與數位行銷整體策略</option>
+                                    <option value="media">全媒體企劃與廣告採購代操</option>
+                                    <option value="data">GA4 流量數據分析與成效優化</option>
+                                    <option value="ai">AI 行銷工作流程導入與自動化</option>
+                                    <option value="advisor">企業常年行銷策略顧問</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">預計專案預算範圍 (NTD)</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan">
+                                    <option value="under10">10 萬以下</option>
+                                    <option value="10-30">10 萬 - 30 萬</option>
+                                    <option value="30-50">30 萬 - 50 萬</option>
+                                    <option value="above50">50 萬以上</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-2">專案細節與期待目標簡述</label>
+                                <textarea rows="4" placeholder="請簡述您的品牌現況與期待達成的目標..." class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950 text-xs text-white focus:outline-none focus:border-accent-cyan"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 font-black text-sm hover:shadow-xl hover:shadow-accent-cyan/20 transition-all">
+                                送出諮詢表單 <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+
+                        <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/30 text-accent-emerald text-xs text-center font-bold">
+                            <i class="fa-solid fa-circle-check text-base mr-2"></i> 感謝預約！已收到您的需求，Melvin 將於 24 小時內親自與您聯繫。
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-slate-950 border-t border-slate-800 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-cyan to-accent-purple flex items-center justify-center text-slate-950 font-black text-sm">
+                    M
+                </div>
+                <span>© 2026 Melvin (Hong J Jhang). All rights reserved.</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-slate-400">
+                <a href="#home" class="hover:text-accent-cyan transition-colors">回頁首</a>
+                <span>•</span>
+                <span>MSc in Marketing (Leicester)</span>
+                <span>•</span>
+                <span>GAIQ Certified</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div id="service-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 text-white rounded-3xl border border-slate-800 max-w-2xl w-full p-8 max-h-[90vh] overflow-y-auto custom-scrollbar relative shadow-2xl">
+            <button onclick="closeModal('service-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="service-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Case Detail Modal -->
+    <div id="case-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 text-white rounded-3xl border border-slate-800 max-w-3xl w-full p-8 max-h-[90vh] overflow-y-auto custom-scrollbar relative shadow-2xl">
+            <button onclick="closeModal('case-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="case-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Blog Detail Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 text-white rounded-3xl border border-slate-800 max-w-3xl w-full p-8 max-h-[90vh] overflow-y-auto custom-scrollbar relative shadow-2xl">
+            <button onclick="closeModal('blog-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="blog-modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        /* Mobile Menu Toggle */
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        /* Core Competency Tab Switcher */
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:bg-slate-800 transition-all text-center';
+            });
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+
+            document.getElementById(`tab-${tabId}`).className = 'tab-btn px-3 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 transition-all text-center';
+            document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+        }
+
+        /* Portfolio Category Filter */
+        function filterPortfolio(category, el) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = 'filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 transition-all';
+            });
+            el.className = 'filter-btn active px-5 py-2.5 rounded-full text-xs font-bold bg-gradient-to-r from-accent-cyan to-accent-purple text-slate-950 transition-all';
+
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(`cat-${category}`)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        /* AI Interactive Calculator Logic */
+        const hoursSlider = document.getElementById('hours-slider');
+        const budgetSlider = document.getElementById('budget-slider');
+        function updateCalc() {
+            const hours = parseInt(hoursSlider.value);
+            const budget = parseInt(budgetSlider.value);
+
+            document.getElementById('hours-val').innerText = hours;
+            document.getElementById('budget-val').innerText = budget.toLocaleString();
+
+            const savedHours = Math.round(hours * 0.4 * 4);
+            const roiBoost = Math.min(45, Math.round(15 + (budget / 50000) * 1.5));
+
+            document.getElementById('saved-hours').innerText = savedHours;
+            document.getElementById('roi-boost').innerText = roiBoost;
+        }
+        hoursSlider.addEventListener('input', updateCalc);
+        budgetSlider.addEventListener('input', updateCalc);
+
+        /* Real-time Blog Search */
+        function searchBlog() {
+            const query = document.getElementById('blog-search').value.toLowerCase();
+            document.querySelectorAll('.blog-card').forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        /* Contact Form Handler */
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+        }
+
+        /* Modal Helpers */
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        /* Service Modal Data */
+        const serviceData = {
+            strategy: {
+                content: `
+                    <h3 class="text-xl font-black mb-4 text-accent-cyan">品牌與數位行銷策略</h3>
+                    <p class="text-xs text-slate-300 mb-4 leading-relaxed">釐清品牌核心定位、產品特色與 target audience 痛點，規劃完整整合溝通藍圖與通路佈局。</p>
+                    <ul class="space-y-2 text-xs text-slate-400 mb-6 list-disc pl-5">
+                        <li>品牌定位與核心價值主張 (Value Proposition) 梳理</li>
+                        <li>整合行銷 (IMC) 全通路布局與溝通脈絡規劃</li>
+                        <li>市場競品分析與藍海轉化機會探尋</li>
+                    </ul>
+                `
+            },
+            media: {
+                content: `
+                    <h3 class="text-xl font-black mb-4 text-accent-purple">全媒體企劃與購買</h3>
+                    <p class="text-xs text-slate-300 mb-4 leading-relaxed">跨足數位與傳統媒體，調配最佳預算比重，最大化品牌聲量與高價值曝光。</p>
+                    <ul class="space-y-2 text-xs text-slate-400 mb-6 list-disc pl-5">
+                        <li>Google, Meta, LINE, LiTV, 程序化媒體資源整合</li>
+                        <li>行銷漏斗各階段 (Reach, Engagement, Conversion) 預算配置</li>
+                        <li>媒體談判採購與附加價值 (Media Value Added) 爭取</li>
+                    </ul>
+                `
+            },
+            data: {
+                content: `
+                    <h3 class="text-xl font-black mb-4 text-accent-emerald">流量管理與數據成效優化</h3>
+                    <p class="text-xs text-slate-300 mb-4 leading-relaxed">以 GAIQ 專業數據架構為核心，進行全路徑優化與廣告測試，提高轉換率。</p>
+                    <ul class="space-y-2 text-xs text-slate-400 mb-6 list-disc pl-5">
+                        <li>GA4 UTM 追蹤體系與轉換漏斗建置</li>
+                        <li>Landing Page A/B 測試與顧客獲取成本 (CPA) 降低</li>
+                        <li>高價值受眾動態 Remarketing 策略</li>
+                    </ul>
+                `
+            },
+            ai: {
+                content: `
+                    <h3 class="text-xl font-black mb-4 text-accent-cyan">AI 行銷效率放大方案</h3>
+                    <p class="text-xs text-slate-300 mb-4 leading-relaxed">將 AI 自動化工作流導入調研、素材與廣告，讓團隊專注於高價值策略，提升投資報酬率 (ROI)。</p>
+                    <ul class="space-y-2 text-xs text-slate-400 mb-6 list-disc pl-5">
+                        <li>團隊專屬 Prompt 模組庫與自動化競品研調</li>
+                        <li>AI 多切角廣告文案與視覺素材批次生成</li>
+                        <li>以數據驗證導入前後之工時與成效增幅</li>
+                    </ul>
+                `
+            }
+        };
+        function openServiceModal(type) {
+            document.getElementById('service-modal-body').innerHTML = serviceData[type].content;
+            openModal('service-modal');
+        }
+
+        /* Case Modal Data */
+        const caseData = {
+            case1: {
+                content: `
+                    <h3 class="text-2xl font-black mb-2 text-white">知名 3C 旗艦新品全媒體上市發布</h3>
+                    <span class="text-xs text-accent-cyan font-bold">飛利浦 / 聯想電腦媒體企劃實績</span>
+                    <div class="my-6 space-y-4 text-xs text-slate-300">
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🎯 背景與商業挑戰 (Challenge)：</strong> 新品上市面對高度競爭市場，需於兩週內建立發布聲量並帶動線上與線下銷售。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🚀 策略與切入點 (Strategy)：</strong> 整合 KOL 深度開箱體驗引爆話題 ➔ 關鍵字廣告精準攔截意向買家 ➔ 程序化廣編大面積涵蓋潛在受眾。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>📈 實質成果 (Results)：</strong> 品牌關鍵字搜尋量增長 210%，專案整體 ROAS 提升 180%。</div>
+                    </div>
+                `
+            },
+            case2: {
+                content: `
+                    <h3 class="text-2xl font-black mb-2 text-white">高端醫療設備與服務品牌溝通重塑</h3>
+                    <span class="text-xs text-accent-purple font-bold">友信醫療集團企劃實績</span>
+                    <div class="my-6 space-y-4 text-xs text-slate-300">
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🎯 背景與商業挑戰 (Challenge)：</strong> 醫療生技專業門檻高，決策鏈長，難以迅速向 B2B 醫院及大眾傳遞價值。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🚀 策略與切入點 (Strategy)：</strong> 包裝 ESG 與醫療科技趨勢故事，結合學術研討會線上直播與專業白皮書下載。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>📈 實質成果 (Results)：</strong> 高品質 B2B 潛在客戶名單成長 45%，成功協助品牌建立專業信任感。</div>
+                    </div>
+                `
+            },
+            case3: {
+                content: `
+                    <h3 class="text-2xl font-black mb-2 text-white">數位影音與寬頻方案流量獲客計畫</h3>
+                    <span class="text-xs text-accent-emerald font-bold">中華電信 / 中嘉數位 / LiTV 實績</span>
+                    <div class="my-6 space-y-4 text-xs text-slate-300">
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🎯 背景與商業挑戰 (Challenge)：</strong> OTT 影音與寬頻訂閱市場競爭激烈，顧客獲取成本 (CPA) 攀升。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🚀 策略與切入點 (Strategy)：</strong> 運用 GA4 深度追蹤高價值觀影用戶行為軌跡，進行動態受眾分群與個人化文案再行銷。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>📈 實質成果 (Results)：</strong> 顧客獲取成本 (CPA) 降低 30%，新用戶試用轉換率提升 25%。</div>
+                    </div>
+                `
+            },
+            case4: {
+                content: `
+                    <h3 class="text-2xl font-black mb-2 text-white">企業級 AI 行銷自動化工作流程建置</h3>
+                    <span class="text-xs text-accent-cyan font-bold">AI 行銷效率賦能實例</span>
+                    <div class="my-6 space-y-4 text-xs text-slate-300">
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🎯 背景與商業挑戰 (Challenge)：</strong> 傳統文案與素材開發耗時，跟不上多渠道廣告快速測試之需求。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>🚀 策略與切入點 (Strategy)：</strong> 打造團隊內部 Prompt 工作流與 AI 輔助生成模組，並訓練成員敏捷測試不同受眾切角。</div>
+                        <div class="p-4 bg-slate-950 rounded-xl border border-slate-800"><strong>📈 實質成果 (Results)：</strong> 廣告文案與視覺素材產出速度提升 300%，團隊每人每週節省 8 小時行政重複工作。</div>
+                    </div>
+                `
+            }
+        };
+        function openCaseModal(id) {
+            document.getElementById('case-modal-body').innerHTML = caseData[id].content;
+            openModal('case-modal');
+        }
+
+        /* Blog Modal Data */
+        const blogData = {
+            art1: {
+                content: `
+                    <h3 class="text-xl font-black mb-3 text-white">2026 AI 行銷實務：如何將 Prompt 工程融入每日媒體採購與內容流程</h3>
+                    <div class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <p>在數位環境快速變化的今天，AI 不僅是撰寫社群文案的輔助工具，更能夠成為策略決策的放大器。關鍵在於如何將 AI 導入行銷的完整日常工作流程。</p>
+                        <p>從市場與競品資訊整理、消費者洞察、品牌及產品內容規劃，到媒體策略發想、廣告素材生成與成效分析，透過建立結構化的 Prompt 模組，讓資料更快轉化為策略。</p>
+                    </div>
+                `
+            },
+            art2: {
+                content: `
+                    <h3 class="text-xl font-black mb-3 text-white">超越短期流量：從 GA4 數據到商業決策的跨產業洞察</h3>
+                    <div class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <p>擁有 GAIQ 認證的實戰思維告訴我們，盲目追求低成本的高流量往往無法轉化為真實商業營收。好的數據分析必須貫穿整個行銷漏斗。</p>
+                        <p>本文介紹如何運用 GA4 自訂事件與歸因模型，找出高價值使用者的真實瀏覽路徑，並以數據調整全媒體投放資源。</p>
+                    </div>
+                `
+            },
+            art3: {
+                content: `
+                    <h3 class="text-xl font-black mb-3 text-white">傳統媒體與數位媒體的整合企劃思維：兼顧品牌聲量與轉換成效</h3>
+                    <div class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <p>全媒體企劃的核心並非「所有平台都投」，而是「在正確的時間給正確的人合適的訊息」。</p>
+                        <p>分享在 3C 家電、醫療生技與電信等不同產業中，如何靈活配置傳統媒體的品牌信任感與數位媒體的精準轉換優勢。</p>
+                    </div>
+                `
+            }
+        };
+        function openBlogModal(id) {
+            document.getElementById('blog-modal-body').innerHTML = blogData[id].content;
+            openModal('blog-modal');
+        }
+    </script>
+</body>
+</html>
